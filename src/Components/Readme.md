@@ -1,0 +1,1 @@
+Please Make your all components within this folder only.
