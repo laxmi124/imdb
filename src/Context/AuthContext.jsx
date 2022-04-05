@@ -8,7 +8,9 @@ export function AuthContextProvider({ children }) {
   const navigate = useNavigate();
   const [token, setToken] = useState("")
   const [color , setColor] = useState("light")
-  
+  const [vId, setVId] = useState("");
+  const [progress, setProgress] = useState(0)
+
 
   const login = (token) => {
     setIsAuth(true);
@@ -25,7 +27,7 @@ export function AuthContextProvider({ children }) {
     }
 
   return (
-    <AuthContext.Provider value={{ login, isAuth , token ,logout, handleColor, color}}>
+    <AuthContext.Provider value={{setVId,vId,setProgress,progress, login, isAuth , token ,logout, handleColor, color}}>
       {children}
     </AuthContext.Provider>
   );
