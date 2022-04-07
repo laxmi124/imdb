@@ -12,6 +12,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import './Home.css'
 import OptionsForWhatStreaming from "./OptionsForWhatStreaming";
 import BornToday from "./BornToday";
+import WatchList from "./WatchList";
 
 
 const Container = styled.div`
@@ -89,6 +90,13 @@ function Home() {
         </div>
         <h6 style={{color:"gray"}}>TV shows and movies just for you</h6>
         <Responsive api_url={`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`}/>
+        <br />
+        <br />
+        <br />
+        <div style={{display:"flex"}}>
+        <h3>From your WatchList</h3> <NavigateNextIcon className="navigationIcon" style={{fontSize:"6vh"}}/>
+        </div>
+        <WatchList/>
         <br />
         <br />
         <br />
