@@ -12,6 +12,14 @@ export function AuthContextProvider({ children }) {
   const [progress, setProgress] = useState(0)
 
 
+
+    const [popup, setPopup] = useState(false)
+   
+    
+    
+    
+    const naviagte = useNavigate()
+
   const login = (token) => {
     setIsAuth(true);
     navigate("/")
@@ -26,8 +34,28 @@ export function AuthContextProvider({ children }) {
       setColor(color==="light"?"dark":"light")
     }
 
+    const handleSearch = (title)=>{
+      setProgress(30)
+      
+      getYT(title)
+    }
+
+    const  getYT = async (title)=>{
+      setProgress(50)
+      let res1 = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${title}&key=AIzaSyCdkSUDMRM0nqFxIZpIujLEWkrtX7W8H6c`);
+      let res2 = await res1.json();
+      console.log(res2.items[0]);
+      const {id:{videoId}} = res2.items[0];
+      console.log(videoId);
+      setVId(videoId)
+      setProgress(100)
+      setPopup(false)
+      naviagte("/watch")
+    }
+    
+
   return (
-    <AuthContext.Provider value={{setVId,vId,setProgress,progress, login, isAuth , token ,logout, handleColor, color}}>
+    <AuthContext.Provider value={{setVId,vId,setProgress,progress, login, isAuth , token ,logout, handleColor, color, handleSearch, popup, setPopup}}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Footer from '../Footer/Footer';
+import MovieWatch from '../MovieWatch';
 import AboutCard from './AboutCard';
 import RelatedVideoSlider from './RelatedVideoSlider';
 
@@ -21,8 +22,12 @@ function WatchTrailer() {
     <div style={{width:"86%",margin:"auto",color:"white"}}>
         <Container>
           {/* left */}
-            <div style={{width:"70%",height:"100%",background:"black"}}></div>
-            
+            <div style={{width:"70%",height:"100%",background:"black"}}>
+            <MovieWatch/>
+
+            </div>
+
+              
             
             {/* right */}
             <div style={{width:"30%",height:"100%",backgroundColor:"#121212",padding:"2vh"}}>

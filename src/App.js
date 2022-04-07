@@ -24,22 +24,23 @@ function App() {
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
-      {/* <SimpleSlider/> */}
-      <Home/>
-      {/* <WatchTrailer /> */}
-      <Footer/>
+      <Navbar/>
+      
+     
       
       <Routes>
-        <Route path='/' element={<Navbar/>}></Route> 
-        <Route path='/watch' element={<MovieWatch/>}></Route> 
+        <Route path='/' element={ <Home/>}></Route> 
+        <Route path='/home' element={ <Home/>}></Route> 
+        <Route path='/watch' element={<WatchTrailer/>}></Route> 
         <Route path='/signin' element={<SignIn/>}></Route> 
         <Route path='/signi/:id' element={<SignInPage/>}></Route> 
         <Route path='/registeri' element={<RegisterPage/>}></Route> 
         
+        {/* <Route></Route>
         <Route></Route>
-        <Route></Route>
-        <Route></Route>
+        <Route></Route> */}
       </Routes>
+      <Footer/>
     </div>
   );
 }

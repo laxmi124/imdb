@@ -20,7 +20,7 @@ const SignIn = () => {
    }
   return (
       <>
-      <Navbar/>
+      
     <div style={{background:"rgba(200,200,196,255)"}}>
 
   
