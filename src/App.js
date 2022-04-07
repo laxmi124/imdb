@@ -10,6 +10,10 @@ import RegisterPage from './Components/RegisterPage';
 import SignIn from './Components/SignIn';
 import SignInPage from './Components/SignInPage';
 import { AuthContext } from './Context/AuthContext';
+import Home from './Components/Home/Home';
+import Footer from './Components/Footer/Footer';
+import WatchTrailer from './Components/WatchTrailer/WatchTrailer';
+
 function App() {
   const {vId , setVId, progress, setProgress} = useContext(AuthContext);
 
@@ -21,6 +25,10 @@ function App() {
         onLoaderFinished={() => setProgress(0)}
       />
       {/* <SimpleSlider/> */}
+      <Home/>
+      {/* <WatchTrailer /> */}
+      <Footer/>
+      
       <Routes>
         <Route path='/' element={<Navbar/>}></Route> 
         <Route path='/watch' element={<MovieWatch/>}></Route> 

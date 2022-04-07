@@ -1,0 +1,10 @@
+.AddToWatchList{
+    height:35px;
+    width:25px;
+    position:absolute;
+     top:0;
+     background:rgba(86,87,85,255);
+    }
+    .AddToWatchList:hover{
+    background:#2c2c2c;
+}

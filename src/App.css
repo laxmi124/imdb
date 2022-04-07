@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #navbar li{
     margin: 0 0.5rem;
     /* color: #121212; */
@@ -103,3 +104,9 @@ background-color: rgba(76, 79, 82, 0.29);
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+=======
+.App{
+    background:black;
+    color:white;
+}
+>>>>>>> b429d71730224a1686dd7e76ab3fa8c678445cdf
