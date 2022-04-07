@@ -1,4 +1,112 @@
+<<<<<<< HEAD
+#navbar li{
+    margin: 0 0.5rem;
+    /* color: #121212; */
+}
+#navbar li > a{
+    /* margin: 0 0.5rem; */
+    font-size:small;
+    color: white;
+    font-weight: 700;
+}
+.App{
+caret-color: yellow;
+
+}
+
+/* .register-page{
+  background-color: white !important;
+  height: 100vh;
+} */
+
+#navbar li:hover{
+cursor: pointer;
+background-color: rgba(76, 79, 82, 0.29);
+}
+
+@media screen and (max-width:992px) {
+    #menucard{
+        display: none;
+    }
+    #navbar{
+        max-width: 100vw !important;
+        /* border: 2px solid blue; */
+    }
+    #search-input{
+        width: 100vw !important;
+    }
+}
+.search-popup{
+  z-index: 2;
+  text-align: center;
+  /* position: relative; */
+ justify-items: center;
+ justify-content: center;
+  left:50%;
+  transform: translate(-50%);
+ margin: auto;
+ min-width: 50rem;
+ /* min-height: 90vh; */
+ max-height: 90vh;
+ position: absolute;
+ background: rgb(31,31,31);
+ color: white;
+ overflow-y: scroll;
+ display: grid;
+ grid-template-columns: auto auto;
+ gap: 2rem;
+ 
+}
+.search-popup img{
+ /* min-height: 50vh; */
+ max-width: 100%;
+ 
+}
+.eachpop{
+  cursor: pointer;
+  
+  
+}
+.eachpop:hover{
+  
+
+  box-shadow: 1px 1px 1px rgba(8, 8, 8, 0.248);
+}
+.playbtn:hover{
+  color: yellow;
+  font-size: 6vw;
+  background-color: rgba(192, 182, 182, 0.303);
+  border-radius: 50%;
+}
+
+.all-menu-links:hover{
+    cursor: pointer;
+}
+.backbtn{
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: black; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: yellow; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+=======
 .App{
     background:black;
     color:white;
 }
+>>>>>>> b429d71730224a1686dd7e76ab3fa8c678445cdf
