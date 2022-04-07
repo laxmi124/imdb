@@ -26,7 +26,19 @@ const DataAcordingToSliding = styled.div`
   width: 35%;
   padding: 10px;
 `;
+
+
+
 function Home() {
+
+  const API_KEY = 'cd1b752287267fcdd91d7693d2fb5336';
+
+  fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_genres=99`)
+  .then((res)=>res.json())
+  .then((res)=>console.log('this if from homme page',res))
+
+
+
   return (
     <div style={{background:"black"}}>
       <Container>
@@ -45,6 +57,7 @@ function Home() {
               style={{ width: "100%", height: "100%" }}
             />
           </div>
+
           <WrapperOfFirstSlidingShow>
             {/* left side */}
             <OwlCarousel />

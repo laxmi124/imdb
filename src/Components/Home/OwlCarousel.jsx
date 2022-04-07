@@ -39,10 +39,10 @@ function OwlCarousel() {
       <img src="https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg" class="d-block w-100" alt="..."/>
       <div class="carousel-caption" style={{display:"flex", width:"100%"}}>
           {/* <TitleDiv> */}
-              <div style={{border: "1px solid yellow", width:"20%", height:"100px", background:"yellow"}}>
+              <div style={{border: "1px solid yellow", width:"20%", height:"200px", background:"yellow"}}>
                  <TitlePicture src="https://m.media-amazon.com/images/M/MV5BYjVlMjZhYzYtOGQxNC00OTQxLTk2NzEtMWFmMmNhODA4YjYzXkEyXkFqcGdeQXVyNjQ3MDgwNjY@._V1_QL75_UX280_CR0,3,280,414_.jpg" alt="" />
               </div>
-              <div style={{border: "1px solid yellow", width:"60%", height:"100px"}}>
+              <div style={{border: "1px solid yellow", width:"60%", height:"200px"}}>
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
               </div>

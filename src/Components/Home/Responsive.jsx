@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import Slider from "react-slick";
 import MovieSliderCard from "./MovieSliderCard";
 
-export default class Responsive extends Component {
-  render() {
+function Responsive (){
+ 
     var settings = {
       dots: true,
       infinite: false,
@@ -38,26 +38,36 @@ export default class Responsive extends Component {
         }
       ]
     };
+
+
+    const [data,setData] = useState([]);
+
+    const API_KEY = 'cd1b752287267fcdd91d7693d2fb5336';
+    useEffect(()=>{
+        fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`)
+        .then((res)=>res.json())
+        .then((res)=>setData(res.results))
+    },[])
+
+
     return (
       <div>
+       
         <Slider {...settings}>
-         
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-           <MovieSliderCard/> 
-
+           {
+           
+          // console.log(data)// poster_path ,,vote_average
+            data.map((item)=>{
+              return (
+                <MovieSliderCard key={item.id} name={item.name} poster ={item.poster_path} rate = {item.vote_average} /> 
+              )
+              
+            })
+           }
         </Slider>
       </div>
     );
-  }
+  
 }
+
+export default Responsive;
