@@ -89,13 +89,13 @@ function Home() {
         <br />
         <br />
         <br />
-        <h2 style={{color:"#f5c516"}}>what to watch</h2>
-        <Responsive/>
+        {/* <h2 style={{color:"#f5c516"}}>what to watch</h2>
+        <Responsive/> */}
         <br />
         <br />
         <br />
-        <h2 style={{color:"#f5c516"}}>Explore Movies & TV shows</h2>
-        <Responsive/>
+        {/* <h2 style={{color:"#f5c516"}}>Explore Movies & TV shows</h2>
+        <Responsive/> */}
         {/* <FanFavourites/> */}
       </Container>
     </div>

@@ -7,7 +7,7 @@ export const ReducerL = ( store = {watchList:[]}, {type,payload})=>{
         case ADD_TO_WATCHLIST:
             return{
             ...store, 
-            watchList:payload
+            watchList:[...store.watchList,payload]
          }
         case NOT_ADDED_YET:
             return{

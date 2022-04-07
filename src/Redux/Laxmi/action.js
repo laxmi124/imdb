@@ -9,7 +9,7 @@ export const updateWatchList = (payload) =>{
 }
 export const notAddedYet = (payload) =>{
     return {
-        type: ADD_TO_WATCHLIST,
+        type: NOT_ADDED_YET,
         payload,
     }
 }
