@@ -5,8 +5,11 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser, islogin, is_Login } from '../Redux/Kanhaiya/action';
 const SignInPage = () => {
   const [user, setUser] = useState({username:"", password:""});
+  const dispatch = useDispatch()
     let navigate = useNavigate()
   let {id} = useParams();
   
@@ -27,7 +30,10 @@ const SignInPage = () => {
     let res2 = await res1.json();
     // console.log( "hello" , res2);
     if(!res2.error){
-      setUser({...res2});
+      setUser({...user});
+      dispatch(addUser(user))
+      dispatch(islogin(true))
+
       navigate("/")
 
     }
@@ -43,12 +49,7 @@ const SignInPage = () => {
 
   }
   const handleSubmit = async()=>{
-  
-      
-     getUser()
-    
-      
-    
+       getUser()
   }
   return (
     <div

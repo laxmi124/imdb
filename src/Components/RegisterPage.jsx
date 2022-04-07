@@ -36,7 +36,7 @@ const RegisterPage = () => {
      })
     let res2 = await res1.json();
      console.log(res2);
-     navigate(`/signi/${user}`)
+     navigate(`/signi`)
    } catch (error) {
      console.log(error);
    }
