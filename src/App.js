@@ -25,6 +25,7 @@ function App() {
         onLoaderFinished={() => setProgress(0)}
       />
       {/* <SimpleSlider/> */}
+      <Navbar/>
       <Home/>
       {/* <WatchTrailer /> */}
       <Footer/>

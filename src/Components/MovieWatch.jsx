@@ -7,7 +7,8 @@ import {  useNavigate } from 'react-router-dom';
 const MovieWatch = () => {
     const {vId , setVId} = useContext(AuthContext);
     const navigate = useNavigate();
-    const [val , setVal] = useState("")
+    const [val , setVal] = useState("");
+    
     useEffect(()=>{
         setVal(`https://www.youtube.com/embed/${vId}`)
        
