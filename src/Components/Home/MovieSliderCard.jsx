@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {useDispatch,useSelector} from 'react-redux';
 import styled from "styled-components";
 import StarIcon from "@material-ui/icons/Star";
@@ -9,6 +9,7 @@ import AddIcon from '@material-ui/icons/Add';
 import './MovieSliderCard.css';
 import DoneIcon from '@material-ui/icons/Done';
 import { updateWatchList } from "../../Redux/Laxmi/action";
+import { AuthContext } from "../../Context/AuthContext";
 
 
 const Box = styled.div`
@@ -89,11 +90,13 @@ const TrailerButton = styled.button`
 const base_url = "https://image.tmdb.org/t/p/original/";
 function MovieSliderCard({ name, poster, rate }) {
   const store = useSelector((store)=>store.watchList.watchList);
+  const {vId , setVId, setProgress, handleSearch, popup, setPopup} = useContext(AuthContext);
+
   
 
 
   return (
-    <Box>
+    <Box onClick={()=>handleSearch(name)}>
       <PictureDiv>
         <ImgTag src={`${base_url}${poster}`} />
         <div className="AddToWatchList">

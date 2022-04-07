@@ -20,13 +20,15 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const Navbar = () => {
     const [open, setOpen] = React.useState(false);
     const [text , setText] = useState("");
+   
     const [arr , setArr] = useState([]);
-    const {vId , setVId, setProgress} = useContext(AuthContext);
+    const {vId , setVId, setProgress, handleSearch, popup, setPopup} = useContext(AuthContext);
     const [loading, setLoading] = useState(false)
     const naviagte = useNavigate()
     let id;
     const handleChange = (e)=>{
       setLoading(true)
+      setPopup(true)
         setText(e.target.value);
         let value = text;
         
@@ -39,22 +41,7 @@ const Navbar = () => {
         }, 2000);
     }
 
-    const handleSearch = (title)=>{
-      setProgress(30)
-      getYT(title)
-    }
-
-    const  getYT = async (title)=>{
-      setProgress(50)
-      let res1 = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${title}&key=AIzaSyCdkSUDMRM0nqFxIZpIujLEWkrtX7W8H6c`);
-      let res2 = await res1.json();
-      console.log(res2.items[0]);
-      const {id:{videoId}} = res2.items[0];
-      console.log(videoId);
-      setVId(videoId)
-      setProgress(100)
-      naviagte("/watch")
-    }
+   
 
     const getData = async(data)=>{
         let res1 = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=cc5085fde0592cd1488b3e136fcc481d&query=${data}`);
@@ -279,7 +266,7 @@ const Navbar = () => {
   </div>
 </nav>
 </div>
-<div className='search-popup'>
+{ popup &&  <div className='search-popup'>
   {loading ? <><Skeleton variant="text" />
       <Skeleton variant="circular" width={100} height={20} />
       <Skeleton variant="rectangular" width={210} height={118} /></> : arr.map((movie, index)=>(
@@ -292,9 +279,13 @@ const Navbar = () => {
         </div>
     ))}  
     
-</div>
+</div>  }
+
 </div>
   )
 }
+
+
+
 
 export default Navbar
