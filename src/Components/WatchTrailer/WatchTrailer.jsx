@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { AuthContext } from '../../Context/AuthContext';
 import Footer from '../Footer/Footer';
 import MovieWatch from '../MovieWatch';
 import AboutCard from './AboutCard';
@@ -17,6 +18,9 @@ const Container = styled.div`
 `;
 
 function WatchTrailer() {
+  const {vId , WatchTrailerData, setWatchTrailerData, handleSearch,base_url, popup, setPopup} = useContext(AuthContext);
+
+  console.log(WatchTrailerData,'this from watchTrailer')
   return (
     <>
     <div style={{width:"86%",margin:"auto",color:"white"}}>

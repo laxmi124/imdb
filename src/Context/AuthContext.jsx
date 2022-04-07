@@ -10,13 +10,13 @@ export function AuthContextProvider({ children }) {
   const [color , setColor] = useState("light")
   const [vId, setVId] = useState("");
   const [progress, setProgress] = useState(0)
-
+  const base_url = "https://image.tmdb.org/t/p/original/";
 
 
     const [popup, setPopup] = useState(false)
    
     
-    
+    const [WatchTrailerData, setWatchTrailerData] = useState({})
     
     const naviagte = useNavigate()
 
@@ -55,7 +55,7 @@ export function AuthContextProvider({ children }) {
     
 
   return (
-    <AuthContext.Provider value={{setVId,vId,setProgress,progress, login, isAuth , token ,logout, handleColor, color, handleSearch, popup, setPopup}}>
+    <AuthContext.Provider value={{setVId,vId,setProgress,progress,setWatchTrailerData,WatchTrailerData, login, isAuth , token ,logout, handleColor, color, handleSearch, popup, setPopup,base_url}}>
       {children}
     </AuthContext.Provider>
   );

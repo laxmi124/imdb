@@ -3,16 +3,13 @@ import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
+import '../Home/UpNextCardBoxes.css';
 
 const ImageDiv = styled.div`
   height: 70%;
   width: 100%;
   position: relative;
 
-  & > ${PlayCircleOutlineIcon}:hover {
-    color: yellow;
-    background:yellow;
-  }
 `;
 const TitleOfSlide = styled.div`
   color: white;
@@ -78,16 +75,12 @@ function RelatedVideoSlider() {
               width={"100%"}
               style={{ margin: "0px", padding: "0" }}
             />
-            <PlayCircleOutlineIcon
-              style={{
+            <PlayCircleOutlineIcon className="PlayButton" style={{
                 color: "white",
                 position: "fixed",
                 bottom: "100",
                 left: "26",
-                fontSize: "5vh",
-                
-              }}
-            ></PlayCircleOutlineIcon>
+                fontSize: "5vh",}}></PlayCircleOutlineIcon>
           </ImageDiv>
 
           {/* text */}
@@ -124,7 +117,7 @@ function RelatedVideoSlider() {
               width={"100%"}
               style={{ margin: "0px", padding: "0" }}
             />
-            <PlayCircleOutlineIcon
+            <PlayCircleOutlineIcon className="PlayButton"
               style={{
                 color: "white",
                 position: "fixed",

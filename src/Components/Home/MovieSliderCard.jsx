@@ -87,16 +87,18 @@ const TrailerButton = styled.button`
   }
 `;
 
-const base_url = "https://image.tmdb.org/t/p/original/";
+
 function MovieSliderCard({ name, poster, rate }) {
-  const store = useSelector((store)=>store.watchList.watchList);
-  const {vId , setVId, setProgress, handleSearch, popup, setPopup} = useContext(AuthContext);
+  // const store = useSelector((store)=>store.watchList.watchList);
+  const {vId , WatchTrailerData, setWatchTrailerData, handleSearch,base_url, popup, setPopup} = useContext(AuthContext);
 
-  
+  const dispatch = useDispatch();
+  const dataToStore = useSelector((store)=>(store.watchList));
 
+console.log(WatchTrailerData)
 
   return (
-    <Box onClick={()=>handleSearch(name)}>
+    <Box onClick={()=>{handleSearch(name); setWatchTrailerData({name:name,poster:poster})}}>
       <PictureDiv>
         <ImgTag src={`${base_url}${poster}`} />
         <div className="AddToWatchList">
