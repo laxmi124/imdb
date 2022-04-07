@@ -36,39 +36,53 @@ const SignIn = () => {
         }}
       >
         <h5> <AdminPanelSettingsIcon></AdminPanelSettingsIcon> Sign In</h5>
-        <Button style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)"}} onClick={handleSign} variant="outlined">
+        <Button style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)", display:"flex", justifyContent:"space-between"}} onClick={handleSign} variant="outlined">
           {" "}
-          <LocalMoviesIcon sx={{ margin: "0 0.5rem" }}></LocalMoviesIcon> Sign In
-          With IMDb
+          <LocalMoviesIcon sx={{ margin: "0 0.5rem" }}></LocalMoviesIcon> <div>  Sign In
+          With IMDb  </div>
         </Button>
-        <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)"}} variant="outlined">
+        <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)", display:"flex", justifyContent:"space-between"}} variant="outlined">
           {" "}
           <i
             class="fa-brands fa-amazon"
             style={{ margin: "0 1rem", fontSize: "1.5rem" }}
           ></i>{" "}
-          Sign In With Amazon
+          <div> Sign In With Amazon  </div>
+          
         </Button>
-        <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)"}} variant="outlined">
+        <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)",display:"flex", justifyContent:"space-between"}} variant="outlined">
           {" "}
-          <FacebookIcon sx={{ margin: "0 1rem" }}></FacebookIcon> Sign In With
-          Facebook
+          <FacebookIcon sx={{ margin: "0 1rem" }}></FacebookIcon>  <div> Sign In With Facebook  </div> 
+          
         </Button>
-        <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)"}} variant="outlined">
+        <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)",display:"flex", justifyContent:"space-between"}} variant="outlined">
           {" "}
-          <GoogleIcon sx={{ margin: "0 1rem" }}> </GoogleIcon> Sign In With
-          Google
+          <GoogleIcon sx={{ margin: "0 1rem" }}> </GoogleIcon> <div> Sign In With Google  </div> 
+          
         </Button>
-        <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)"}} variant="outlined">
+        <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)",display:"flex", justifyContent:"space-between"}} variant="outlined">
           {" "}
-          <AppleIcon sx={{ margin: "0 1rem" }}></AppleIcon> Sign In With Apple
+          <AppleIcon sx={{ margin: "0 1rem" }}></AppleIcon> <div> Sign In With Apple </div>
         </Button>
         <h5>or</h5>
-        <a style={{textDecoration:"none"}} href="/registeri"><Button sx={{background:"#e4b721", color:"rgba(88,88,88,255)", textTransform:"capitalize", fontWeight:"bolder"}} variant="contained">
+        <a style={{textDecoration:"none"}} href="/registeri">
+          <button style={{
+              // background: "#f2c75e",
+             
+              fontSize: "12px",
+              width:"200px",
+              outline: "none",
+              border: "none",
+              borderRadius: "3px",
+              height:"25px",
+              fontWeight: "500",
+              background: "#e4b721",
+              
+            }}variant="contained">
           {" "}
-          <HowToRegIcon sx={{ margin: "0 1rem" }}></HowToRegIcon> Create A New
+         Create A New
           Account
-        </Button></a>
+        </button></a>
 
         <p style={{ maxWidth: "20vw", fontSize:"0.8rem" }}>
           By signing in, you agree to IMDb's Conditions of Use and Privacy

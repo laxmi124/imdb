@@ -25,7 +25,7 @@ function App() {
         <Route path='/' element={<Navbar/>}></Route> 
         <Route path='/watch' element={<MovieWatch/>}></Route> 
         <Route path='/signin' element={<SignIn/>}></Route> 
-        <Route path='/signi' element={<SignInPage/>}></Route> 
+        <Route path='/signi/:id' element={<SignInPage/>}></Route> 
         <Route path='/registeri' element={<RegisterPage/>}></Route> 
         
         <Route></Route>
