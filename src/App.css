@@ -7,9 +7,12 @@
     font-size:small;
     color: white;
     font-weight: 700;
+    
 }
 .App{
 caret-color: yellow;
+background:black;
+/* color:white; */
 
 }
 
@@ -103,7 +106,10 @@ background-color: rgba(76, 79, 82, 0.29);
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+<<<<<<< HEAD
 .App{
     background:black;
     color:white;
 }
+=======
+>>>>>>> 6d9f5c69b98e051c111b66bac333d1a1776aebd3

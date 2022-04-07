@@ -18,10 +18,10 @@ const handleBack = ()=>{
     navigate("/")
 }
 
-  return ( <div style={{overflowY:"hidden", position:"relative", }}> 
+  return ( <div style={{overflowY:"hidden", position:"relative",marginTop: "1rem"}}> 
   <button  onClick={handleBack} style={{background:"black", color:"white", borderRadius:"10%", position:"absolute", left:"0px" }}> <CloseIcon></CloseIcon> Close</button>
     {/* <ArrowBackIcon className='backbtn' onClick={handleBack} sx={{position:"absolute", top:"45vh", left:"0", fontSize:"3rem", color:"yellow", border:"1px solid yellow", borderRadius:"1%"}}></ArrowBackIcon> */}
-    {val != ""?  <iframe style={{height:"50vh" , width:"50vw", border:"0.2vw solid yellow"}} src={val} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe> : null }
+    {val != ""?  <iframe style={{height:"60vh" , width:"100%"}} src={val} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe> : null }
     
     </div>
   )
