@@ -40,10 +40,11 @@ export function AuthContextProvider({ children }) {
       
       getYT(title)
     }
+    
     let arr = ["AIzaSyBPo8ftIoPViBJeLeAgOLS0sZXDq0l-IMA" , "AIzaSyCdkSUDMRM0nqFxIZpIujLEWkrtX7W8H6c", "AIzaSyDV4mL7oAMtNA6aIF_WM_o_VYZzrv_xKyQ"]
     const  getYT = async (title)=>{
       setProgress(50)
-      let res1 = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${title}&key=${arr[2]}`);
+      let res1 = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${title}&key=${arr[1]}`);
       let res2 = await res1.json();
       console.log(res2.items[0]);
       const {id:{videoId}} = res2.items[0];

@@ -57,7 +57,7 @@ const DataAcordingToSliding = styled.div`
 
 
 function Home() {
-  const {vId , setVId, setProgress,  setIsChecked,isChecked} = useContext(AuthContext);
+  const {vId , setVId, setProgress,  setIsChecked,isChecked, handleSearch} = useContext(AuthContext);
   
   const isLogin = useSelector((state) => state.myReducer.isLogin);
   let navigate = useNavigate()
@@ -93,6 +93,7 @@ function Home() {
       <Container>
         <div style={{background:"black"}}>
           <div
+          onClick={()=>{handleSearch("amazonprime")}}
             className="bannerTop"
           >
             <img
