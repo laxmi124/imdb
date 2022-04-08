@@ -1,10 +1,12 @@
 import {  createStore } from "redux";
-import { ReducerK } from "./Kanhaiya/reducer";
+// import { ReducerK } from "./Kanhaiya/reducer";
 import combineReducers from "./reducer"
 // import { ReducerK } from "./Kanhaiya/reducer";
 // import { ReducerL } from "./Laxmi/reducer";
+// import { ReducerL } from "./Laxmi/reducer";
 // import reducer from "./reducer";
 // import { ReducerU } from "./Utsav/reducer";
+// import combineReducers from './reducer'
 
 //  const rootReducer = combineReducers(ReducerL , ReducerK, ReducerU)
 
