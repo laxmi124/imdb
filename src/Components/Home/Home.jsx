@@ -7,7 +7,6 @@ import FeaturesToday from "./FeaturesToday";
 import OwlCarousel from "./OwlCarousel";
 import Responsive from "./Responsive";
 import UpNextCardBoxes from "./UpNextCardBoxes";
-import {useSelector,useDispatch} from 'react-redux';
 import { updateWatchList } from "../../Redux/Laxmi/action";
 import MoreToWatch from "./MoreToWatch";
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
