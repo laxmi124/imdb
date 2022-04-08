@@ -9,11 +9,11 @@ export const ReducerL = ( store = {watchList:[]}, {type,payload})=>{
             ...store, 
             watchList:[...store.watchList,payload]
          }
-        case NOT_ADDED_YET:
-            return{
-            ...store, 
-            payload:!payload
-         }
+        // case NOT_ADDED_YET:
+        //     return{
+        //     ...store, 
+        //     payload:!payload
+        //  }
         default:
         return store
     }

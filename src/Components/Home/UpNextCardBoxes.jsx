@@ -31,7 +31,7 @@ function UpNextCardBoxes({img_url,title,time,discription}) {
        <div style={{width:"80%",height:"100%",paddingLeft:"1vh" }}>
          <div style={{display:'flex'}}>
            <PlayCircleOutlineIcon className="PlayButton" style={{fontSize:"40px"}}>{time}</PlayCircleOutlineIcon>
-            <p>{time}</p>
+            <p style={{color:"gray",fontSize:"2vh",marginTop:"2vh",marginLeft:"5px"}}>{time}</p>
          </div>
             <p>{title}</p>
            <p>watch the trailer</p>

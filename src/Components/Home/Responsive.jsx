@@ -1,8 +1,13 @@
 import React, { Component, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Slider from "react-slick";
 import MovieSliderCard from "./MovieSliderCard";
 
 function Responsive ({api_url}){
+
+  const dispatch = useDispatch();
+
+
  
     var settings = {
       dots: true,
@@ -58,7 +63,7 @@ function Responsive ({api_url}){
           // console.log(data)// poster_path ,,vote_average
             data.map((item)=>{
               return (
-                <MovieSliderCard key={item.id} name={item.name} poster ={item.poster_path} rate = {item.vote_average} /> 
+                <MovieSliderCard key={item.id} dispatch = {dispatch} item={item} name={!item.title?item.name:item.title} poster ={item.poster_path} rate = {item.vote_average} /> 
               )
               
             })

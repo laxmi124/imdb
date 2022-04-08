@@ -10,7 +10,7 @@ import './MovieSliderCard.css';
 import DoneIcon from '@material-ui/icons/Done';
 import { updateWatchList } from "../../Redux/Laxmi/action";
 import { AuthContext } from "../../Context/AuthContext";
-
+import {handleAdd} from '../../Redux/Laxmi/action'
 
 const Box = styled.div`
   width: 180px;
@@ -88,26 +88,27 @@ const TrailerButton = styled.button`
 `;
 
 
-function MovieSliderCard({ name, poster, rate }) {
+function MovieSliderCard({ name, poster, rate,dispatch ,item}) {
   // const store = useSelector((store)=>store.watchList.watchList);
   const {vId , WatchTrailerData, setWatchTrailerData, handleSearch,base_url, popup, setPopup} = useContext(AuthContext);
 
-  const dispatch = useDispatch();
-  const dataToStore = useSelector((store)=>(store.watchList));
-
-console.log(WatchTrailerData)
+   
+  const handleAdd1=(item)=>{
+   dispatch(handleAdd(item))
+    
+  }
 
   return (
-    <Box onClick={()=>{handleSearch(name); setWatchTrailerData({name:name,poster:poster})}}>
+    <Box>
       <PictureDiv>
         <ImgTag src={`${base_url}${poster}`} />
         <div className="AddToWatchList">
-        <AddIcon/>
+        <AddIcon onClick={()=>handleAdd1(item)}/>
         </div>
       </PictureDiv>
 
       {/* title div */}
-      <TitleDiv>
+      <TitleDiv onClick={()=>handleSearch(name)}>
 
         <Rate>
           

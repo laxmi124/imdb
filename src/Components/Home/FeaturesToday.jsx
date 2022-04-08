@@ -62,9 +62,9 @@ function FeaturesToday({threeSliderApiKey}) {
     {
       data.map((item)=>{
         return (
-          <div onClick={()=>handleSearch(item.name)} style={{height : "300px", margin:"auto", width : "95%" }} > 
+          <div onClick={()=>handleSearch(!item.title  ? item.name : item.title)} style={{height : "300px", margin:"auto", width : "95%" }} > 
               <img src={`${base_url}${item.poster_path}`} alt="" height={"88%"} width={"100%"} /> 
-              <Titles >{item.name}</Titles>
+              <Titles >{!item.title  ? item.name : item.title}</Titles>
           </div>
         )
       })

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -24,7 +24,14 @@ const TitleOfSlide = styled.div`
   }
 `;
 
-function RelatedVideoSlider() {
+function RelatedVideoSlider({api_url,base_url}) {
+
+  const [data,setData] = useState([])
+  fetch(api_url)
+  .then((res)=>res.json())
+  .then((res)=>setData(res.results));
+
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -59,56 +66,64 @@ function RelatedVideoSlider() {
 
       <Carousel responsive={responsive}>
         {/* first card */}
-        <div
-          style={{
-            height: "300px",
-            margin: "auto",
-            width: "90%",
-          }}
-        >
-          {/* image */}
-          <ImageDiv>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BNGZhMjBiMDMtYTIyMS00OTRlLThhZWItYThjNTRkZWEyNjIzXkEyXkFqcGdeQWpnYW1i._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg"
-              alt=""
-              height={"100%"}
-              width={"100%"}
-              style={{ margin: "0px", padding: "0" }}
-            />
-            <PlayCircleOutlineIcon className="PlayButton" style={{
-                color: "white",
-                position: "fixed",
-                bottom: "100",
-                left: "26",
-                fontSize: "5vh",}}></PlayCircleOutlineIcon>
-          </ImageDiv>
 
-          {/* text */}
-          <div style={{ height: "30%", width: "100%" }}>
-            <TitleOfSlide>Netflix 2021 Film Preview</TitleOfSlide>
-            <p
+        {
+          data.map((item)=>{
+            return (
+              <div
               style={{
-                color: "white",
-                position: "relative",
-                top: "5px",
-                padding: "4px",
-                marginTop: "1vh",
+                height: "300px",
+                margin: "auto",
+                width: "90%",
               }}
             >
-              Malcolm Marie
-            </p>
-          </div>
-        </div>
-
+             
+              <ImageDiv>
+                <img
+                  src={`${base_url}${item.poster_path}`}
+                  alt=""
+                  height={"100%"}
+                  width={"100%"}
+                  style={{ margin: "0px", padding: "0" }}
+                />
+                <PlayCircleOutlineIcon className="PlayButton" style={{
+                    color: "white",
+                    position: "fixed",
+                    bottom: "100",
+                    left: "26",
+                    fontSize: "5vh",}}></PlayCircleOutlineIcon>
+              </ImageDiv>
+    
+              <div style={{ height: "30%", width: "100%" }}>
+                <TitleOfSlide>Netflix 2021 Film Preview</TitleOfSlide>
+                <p
+                  style={{
+                    color: "white",
+                    position: "relative",
+                    top: "5px",
+                    padding: "4px",
+                    marginTop: "1vh",
+                  }}
+                >
+                  Malcolm Marie
+                </p>
+              </div>
+            </div>
+    
+            )
+          })
+        }
+      
         {/* second card */}
-        <div
+        
+         {/* <div
           style={{
             height: "300px",
             margin: "auto",
             width: "90%",
           }}
         >
-          {/* image */}
+         
           <ImageDiv>
             <img
               src="https://m.media-amazon.com/images/M/MV5BZDMxMDc3ZmItMWRjMi00YWU4LTg3ZGQtNGE1MDc2YzliZWU0XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_QL75_UX760_CR0,0,760,428_.jpg"
@@ -128,7 +143,7 @@ function RelatedVideoSlider() {
             ></PlayCircleOutlineIcon>
           </ImageDiv>
 
-          {/* text */}
+      
           <div style={{ height: "30%", width: "100%" }}>
             <TitleOfSlide>Netflix 2021 Film Preview</TitleOfSlide>
             <p
@@ -143,18 +158,18 @@ function RelatedVideoSlider() {
               Malcolm Marie
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* third div */}
 
-        <div
+        {/* <div
           style={{
             height: "300px",
             margin: "auto",
             width: "90%",
           }}
         >
-          {/* image */}
+          
           <ImageDiv>
             <img
               src="https://m.media-amazon.com/images/M/MV5BYzJjYzY5MDUtMDNmNi00NjY2LTljNzEtNTM5ZWNjNTUzMmNiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL75_UX760_CR0,0,760,428_.jpg"
@@ -174,7 +189,7 @@ function RelatedVideoSlider() {
             ></PlayCircleOutlineIcon>
           </ImageDiv>
 
-          {/* text */}
+          
           <div style={{ height: "30%", width: "100%" }}>
             <TitleOfSlide>Netflix 2021 Film Preview</TitleOfSlide>
             <p
@@ -189,18 +204,18 @@ function RelatedVideoSlider() {
               Malcolm Marie
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* fourth card */}
 
-        <div
+        {/* <div
           style={{
             height: "300px",
             margin: "auto",
             width: "90%",
           }}
         >
-          {/* image */}
+          
           <ImageDiv>
             <img
               src="https://m.media-amazon.com/images/M/MV5BNGZhMjBiMDMtYTIyMS00OTRlLThhZWItYThjNTRkZWEyNjIzXkEyXkFqcGdeQWpnYW1i._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg"
@@ -220,7 +235,7 @@ function RelatedVideoSlider() {
             ></PlayCircleOutlineIcon>
           </ImageDiv>
 
-          {/* text */}
+          
           <div style={{ height: "30%", width: "100%" }}>
             <TitleOfSlide>Netflix 2021 Film Preview</TitleOfSlide>
             <p
@@ -235,7 +250,7 @@ function RelatedVideoSlider() {
               Malcolm Marie
             </p>
           </div>
-        </div>
+        </div> */}
 
       </Carousel>
     </div>

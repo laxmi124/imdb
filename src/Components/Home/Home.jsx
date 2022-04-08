@@ -39,7 +39,16 @@ const DataAcordingToSliding = styled.div`
 
 
 function Home() {
+
+
   const API_KEY = 'cd1b752287267fcdd91d7693d2fb5336';
+
+
+
+  // fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US`)
+  // .then((res)=>res.json())
+  // .then((res)=>console.log(res,'this is from home page'))
+
 
   return (
     <div style={{background:"black"}}>
@@ -67,7 +76,7 @@ function Home() {
             {/* right side */}
 
             <DataAcordingToSliding>
-            <h4>Up next</h4>
+            <h5 style={{color:"#f5c516",paddingBottom:"3vh",fontWeight:"bold"}}>Up next</h5>
               {/* in right side there are some small small boxes wich data changes acording to the slideshow */}
               <UpNextCardBoxes img_url='https://m.media-amazon.com/images/M/MV5BOWYzN2Q0NTYtODEzMi00YWMxLWE3MDMtZGUwNGM4NjMxMzQ4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_QL75_UX280_CR0,0,280,414_.jpg' title="Undone" time="2:59" discription='A woman discovers she has a new relationship with time, after surviving a car accident that almost killed her.'/>
               <UpNextCardBoxes img_url="https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_QL75_UX280_CR0,0,280,414_.jpg" title="Star Trek: Strange New Worlds" time="1:59" discription='A woman discovers she has a new relationship with time, after surviving a car accident that almost killed her.'/>
@@ -96,6 +105,8 @@ function Home() {
         <div style={{display:"flex"}}>
         <h3>From your WatchList</h3> <NavigateNextIcon className="navigationIcon" style={{fontSize:"6vh"}}/>
         </div>
+        <br />
+        <br />
         <WatchList/>
         <br />
         <br />
