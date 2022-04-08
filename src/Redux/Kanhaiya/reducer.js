@@ -1,4 +1,4 @@
-import { Add_User, is_Login } from "./action"
+import { Add_User, is_Login, Remove_User } from "./action"
 
 export const ReducerK = ( store = {user:{}, isLogin:false}, action)=>{
     console.log("inside store" , store)
@@ -9,6 +9,11 @@ export const ReducerK = ( store = {user:{}, isLogin:false}, action)=>{
                 user : {...action.payload}}
             ) 
         case is_Login:
+            return({
+                ...store,
+                isLogin: action.payload
+            })
+        case Remove_User:
             return({
                 ...store,
                 isLogin: action.payload

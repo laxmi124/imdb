@@ -18,7 +18,10 @@ const SignInPage = () => {
   }, [])
   const getUser = async ()=>{
     // console.log(user)
-  
+  // user{
+  //   username:"",
+  //   password:"",
+  // }
     console.log(user);
     let res1 = await fetch(`https://masai-api-mocker.herokuapp.com/auth/login`, {
       method:"POST",
@@ -120,7 +123,7 @@ const SignInPage = () => {
           <Checkbox  defaultChecked />
             <label htmlFor="" >Keep me signed in. <span>Details <sup><ArrowDropDownIcon></ArrowDropDownIcon></sup></span></label>
           </div>
-          <button  style={{
+          <button onClick={()=>navigate("/registeri")}  style={{
               fontSize: "12px",
               padding: "4px",
               outline: "none",

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Footer from '../Footer/Footer';
 import MovieWatch from '../MovieWatch';
@@ -17,6 +19,18 @@ const Container = styled.div`
 `;
 
 function WatchTrailer() {
+  
+  const isLogin = useSelector((state) => state.myReducer.isLogin);
+  let navigate = useNavigate()
+  useEffect(()=>{
+
+    if(!isLogin){
+      navigate("/signi")
+    }
+  }, [])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
     <div id='' style={{width:"86%",margin:"auto",color:"white", position:"relative"}}>

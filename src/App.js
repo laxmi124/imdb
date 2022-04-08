@@ -13,6 +13,7 @@ import { AuthContext } from './Context/AuthContext';
 import Home from './Components/Home/Home';
 import Footer from './Components/Footer/Footer';
 import WatchTrailer from './Components/WatchTrailer/WatchTrailer';
+import UserDropdown from './Components/UserDropdown';
 
 function App() {
   const {vId , setVId, progress, setProgress} = useContext(AuthContext);
@@ -41,6 +42,7 @@ function App() {
         <Route></Route> */}
       </Routes>
       <Footer/>
+      
     </div>
   );
 }

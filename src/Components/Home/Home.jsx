@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 // import FanFavoritesSlideShow from "./FanFavoritesSlideShow";
 import FeaturesToday from "./FeaturesToday";
@@ -30,6 +32,15 @@ const DataAcordingToSliding = styled.div`
 
 
 function Home() {
+  
+  const isLogin = useSelector((state) => state.myReducer.isLogin);
+  let navigate = useNavigate()
+  useEffect(()=>{
+
+    if(!isLogin){
+      navigate("/signi")
+    }
+  }, [])
 
   const API_KEY = 'cd1b752287267fcdd91d7693d2fb5336';
 
