@@ -26,6 +26,13 @@ const Container = styled.div`
       text-decoration: underline;
       cursor: pointer;
   }
+
+
+  @media (max-width: 767px) {
+    justify-content : center;
+    text-align: center;
+    grid-template-columns : auto auto auto;
+  }
 `;
 
 const ContainerForIcons=styled.div`

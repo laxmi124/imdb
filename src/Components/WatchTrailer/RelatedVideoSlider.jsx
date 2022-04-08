@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import '../Home/UpNextCardBoxes.css';
+import { AuthContext } from "../../Context/AuthContext";
 
 const ImageDiv = styled.div`
   height: 70%;
@@ -24,12 +25,13 @@ const TitleOfSlide = styled.div`
   }
 `;
 
-function RelatedVideoSlider({api_url,base_url}) {
+function RelatedVideoSlider({api_url}) {
 
   const [data,setData] = useState([])
   fetch(api_url)
   .then((res)=>res.json())
-  .then((res)=>setData(res.results));
+  // .then((res)=>console.log(res.results));
+  .then((res)=>setData([...res.results]));
 
 
   const responsive = {
@@ -52,6 +54,17 @@ function RelatedVideoSlider({api_url,base_url}) {
     },
   };
 
+
+  const {
+    vId,
+    WatchTrailerData,
+    setWatchTrailerData,
+    handleSearch,
+    base_url,
+    popup,
+    setPopup,
+  } = useContext(AuthContext);
+
   return (
     <div
       style={{
@@ -70,7 +83,9 @@ function RelatedVideoSlider({api_url,base_url}) {
         {
           data.map((item)=>{
             return (
-              <div
+              <div 
+               key={item.id}
+               onClick={()=>handleSearch(item.title?item.title : item.name)}
               style={{
                 height: "300px",
                 margin: "auto",
@@ -95,8 +110,8 @@ function RelatedVideoSlider({api_url,base_url}) {
               </ImageDiv>
     
               <div style={{ height: "30%", width: "100%" }}>
-                <TitleOfSlide>Netflix 2021 Film Preview</TitleOfSlide>
-                <p
+                <TitleOfSlide>{item.name ? item.name : item.title}</TitleOfSlide>
+                {/* <p
                   style={{
                     color: "white",
                     position: "relative",
@@ -106,7 +121,7 @@ function RelatedVideoSlider({api_url,base_url}) {
                   }}
                 >
                   Malcolm Marie
-                </p>
+                </p> */}
               </div>
             </div>
     
