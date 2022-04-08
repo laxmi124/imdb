@@ -28,10 +28,10 @@ function WatchTrailer() {
   console.log(WatchTrailerData,'this from watchTrailer')
   return (
     <>
-    <div style={{width:"86%",margin:"auto",color:"white"}}>
+    <div id='' style={{width:"86%",margin:"auto",color:"white", position:"relative"}}>
         <Container>
           {/* left */}
-            <div style={{width:"70%",height:"100%",background:"black"}}>
+            <div style={{width:"70%",height:"100%",background:"black", paddingTop:"2rem"}}>
             <MovieWatch/>
 
             </div>
