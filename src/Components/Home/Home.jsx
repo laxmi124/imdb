@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useContext, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 // import FanFavoritesSlideShow from "./FanFavoritesSlideShow";
@@ -14,6 +14,8 @@ import './Home.css'
 import OptionsForWhatStreaming from "./OptionsForWhatStreaming";
 import BornToday from "./BornToday";
 import WatchList from "./WatchList";
+import { addUser, islogin } from "../../Redux/Kanhaiya/action";
+import { AuthContext } from "../../Context/AuthContext";
 
 
 const Container = styled.div`
@@ -55,12 +57,23 @@ const DataAcordingToSliding = styled.div`
 
 
 function Home() {
+  const {vId , setVId, setProgress,  setIsChecked,isChecked} = useContext(AuthContext);
   
   const isLogin = useSelector((state) => state.myReducer.isLogin);
   let navigate = useNavigate()
+  let dispatch = useDispatch()
   useEffect(()=>{
-
+    console.log(isChecked, "isCheked")
+    let userlog = JSON.parse(localStorage.getItem('userdetails'));
+    if(userlog || isChecked){
+      // console.log("bolo ji")
+      dispatch(addUser(userlog))
+      dispatch(islogin(true));
+      return;
+    }
     if(!isLogin){
+      
+
       navigate("/signi")
     }
   }, [])

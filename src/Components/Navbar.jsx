@@ -19,12 +19,13 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import { AuthContext } from "../Context/AuthContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Skeleton from "@mui/material/Skeleton";
 import Logo from "./Logo";
 import { useSelector } from "react-redux";
 import "./Navbar.css";
 import UserDropdown from "./UserDropdown";
+import TemporaryDrawer from "./Home/TemporaryDrawer";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -32,7 +33,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const Navbar = () => {
   const user = useSelector((state) => state.myReducer.user);
   const isLogin = useSelector((state) => state.myReducer.isLogin);
-
+ 
   const [open, setOpen] = React.useState(false);
   const [text, setText] = useState("");
 
@@ -102,13 +103,14 @@ const Navbar = () => {
 
   return (
     <div className="navbar-bgd">
-      <i class="fi fi-rr-menu-burger menui"></i>
+      
+      <TemporaryDrawer Menu={'Menu'}/>
       <div id="navbar">
         <nav className="navbar navbar-expand-lg navbar-full">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               <Logo className="nav-logo" />
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -171,9 +173,9 @@ const Navbar = () => {
                             right: "0",
                           }}
                         />
-                        <a className="navbar-brand" href="#">
+                        <Link className="navbar-brand" to="/">
                           <Logo />
-                        </a>
+                        </Link>
                       </Toolbar>
                     </AppBar>
                     <div

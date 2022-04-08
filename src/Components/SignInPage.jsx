@@ -1,5 +1,5 @@
 import { Checkbox } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from './Logo'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -7,22 +7,28 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, islogin, is_Login } from '../Redux/Kanhaiya/action';
+import { AuthContext } from '../Context/AuthContext';
 const SignInPage = () => {
+  const {vId , setVId, setProgress,  setIsChecked,isChecked} = useContext(AuthContext);
+
   const [user, setUser] = useState({username:"", password:""});
   const dispatch = useDispatch()
     let navigate = useNavigate()
   let {id} = useParams();
   
   useEffect(()=>{
-    // getUser()
+    let userlog = JSON.parse(localStorage.getItem("userdetails"));
+    console.log(userlog)
+    if(userlog){
+      setUser({...userlog});
+      
+      getUser()
+    }
+    return;
   }, [])
   const getUser = async ()=>{
-    // console.log(user)
-  // user{
-  //   username:"",
-  //   password:"",
-  // }
-    console.log(user);
+    
+    
     let res1 = await fetch(`https://masai-api-mocker.herokuapp.com/auth/login`, {
       method:"POST",
       body: JSON.stringify(user),
@@ -31,7 +37,7 @@ const SignInPage = () => {
       },
     });
     let res2 = await res1.json();
-    // console.log( "hello" , res2);
+   
     if(!res2.error){
       setUser({...user});
       dispatch(addUser(user))
@@ -40,6 +46,11 @@ const SignInPage = () => {
       navigate("/")
 
     }
+  }
+  const handleCheck = (e)=>{
+  // console.log(e.target.checked)
+  setIsChecked((prev)=>!prev);
+  // console.log(isChecked);
   }
   
   const handleChange = (e)=>{
@@ -52,6 +63,7 @@ const SignInPage = () => {
 
   }
   const handleSubmit = async()=>{
+    localStorage.setItem("userdetails", JSON.stringify(user));
        getUser()
   }
   return (
@@ -120,7 +132,7 @@ const SignInPage = () => {
            Sign-In
           </button>
           <div style={{fontSize:"12px"}}>
-          <Checkbox  defaultChecked />
+          <Checkbox onChange={handleCheck}  defaultChecked />
             <label htmlFor="" >Keep me signed in. <span>Details <sup><ArrowDropDownIcon></ArrowDropDownIcon></sup></span></label>
           </div>
           <button onClick={()=>navigate("/registeri")}  style={{
