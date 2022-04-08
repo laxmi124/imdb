@@ -26,7 +26,7 @@ function FeaturesToday({threeSliderApiKey}) {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 5,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -57,13 +57,13 @@ function FeaturesToday({threeSliderApiKey}) {
   return (
     <div style={{ color: "white", background:"black",width:"100%",margin:"auto", }}>
     
-  <Carousel responsive={responsive}>
-
+  <Carousel  responsive={responsive}>
+    
     {
       data.map((item)=>{
         return (
           <div onClick={()=>handleSearch(!item.title  ? item.name : item.title)} style={{height : "300px", margin:"auto", width : "87%" }} > 
-              <img src={`${base_url}${item.poster_path}`} alt="" height={"90%"} width={"100%"} /> 
+              <img src={`${base_url}${item.poster_path}`} alt="" height={"90%"}  /> 
               <Titles >{!item.title  ? item.name : item.title}</Titles>
           </div>
         )

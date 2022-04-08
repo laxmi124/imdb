@@ -71,6 +71,7 @@ function RelatedVideoSlider({api_url}) {
         color: "black",
         background: "black",
         width: "100%",
+        // height:"100%",
         margin: "auto",
         marginTop: "2vh",
       }}
@@ -87,7 +88,7 @@ function RelatedVideoSlider({api_url}) {
                key={item.id}
                onClick={()=>handleSearch(item.title?item.title : item.name)}
               style={{
-                height: "300px",
+                height: "500px",
                 margin: "auto",
                 width: "90%",
               }}
@@ -104,7 +105,7 @@ function RelatedVideoSlider({api_url}) {
                 <PlayCircleOutlineIcon className="PlayButton" style={{
                     color: "white",
                     position: "fixed",
-                    bottom: "100",
+                    bottom: "150",
                     left: "26",
                     fontSize: "5vh",}}></PlayCircleOutlineIcon>
               </ImageDiv>

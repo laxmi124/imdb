@@ -29,6 +29,24 @@ position: "relative",
   
      }
 `;
+const H3 = styled.h3`
+     
+  @media (max-width: 720px) {
+   display:none
+  }
+`;
+const H6 = styled.h6`
+
+  @media (max-width: 720px) {
+    display:none
+     }
+`;
+const Div1 = styled.div`
+     display:flex
+  @media (max-width: 720px) {
+    display:none
+     }
+`;
 
 
 const TitleDiv = styled.div`
@@ -111,11 +129,11 @@ function OwlCarousel() {
                  <TitlePicture src="https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg" alt="" />
               </div> */}
             <div style={{ width: "100%", height: "90px" }}>
-              <div style={{ display: "flex" }}>
-                <PlayCircleOutlineIcon style={{ fontSize: "10vh" }} />
-                <h3>Tom Cruise Returns in Sequel</h3>
-              </div>
-              <h6>Watch the New Trailer</h6>
+              <Div1 >
+                <PlayCircleOutlineIcon  style={{ fontSize: "10vh" }} />
+                <H3>Tom Cruise Returns in Sequel</H3>
+              </Div1>
+              <H6>Watch the New Trailer</H6>
             </div>
           </div>
         </div>
@@ -131,11 +149,11 @@ function OwlCarousel() {
           />
           <div className="carousel-caption d-none d-md-block">
             <div style={{ width: "100%", height: "90px" }}>
-              <div style={{ display: "flex" }}>
+              <Div1 style={{ display: "flex" }}>
                 <PlayCircleOutlineIcon style={{ fontSize: "10vh" }} />
-                <h3>Star Trek: Strange New Worlds</h3>
-              </div>
-              <h6>Watch Trailer </h6>
+                <H3>Star Trek: Strange New Worlds</H3>
+              </Div1>
+              <H6>Watch Trailer </H6>
             </div>
           </div>
         </div>
@@ -148,11 +166,11 @@ function OwlCarousel() {
           />
           <div className="carousel-caption d-none d-md-block">
             <div style={{ width: "100%", height: "90px" }}>
-              <div style={{ display: "flex" }}>
+              <Div1 style={{ display: "flex" }}>
                 <PlayCircleOutlineIcon style={{ fontSize: "10vh" }} />
-                <h3>Ask Eachother Anything</h3>
-              </div>
-              <h6>Watch Trailer </h6>
+                <H3>Ask Eachother Anything</H3>
+              </Div1>
+              <H6>Watch Trailer </H6>
             </div>
           </div>
         </div>
@@ -166,11 +184,11 @@ function OwlCarousel() {
           />
           <div className="carousel-caption d-none d-md-block">
             <div style={{ width: "100%", height: "90px" }}>
-              <div style={{ display: "flex" }}>
+              <Div1 style={{ display: "flex" }}>
                 <PlayCircleOutlineIcon style={{ fontSize: "10vh" }} />
-                <h3> Andrew Garfield stars in "under the banner of heaven"</h3>
-              </div>
-              <h6>Watch Trailer Now </h6>
+                <H3> Andrew Garfield stars in "under the banner of heaven"</H3>
+              </Div1>
+              <H6>Watch Trailer Now </H6>
             </div>
           </div>
         </div>
