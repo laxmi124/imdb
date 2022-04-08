@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
+import { AuthContext } from '../../Context/AuthContext';
 import Footer from '../Footer/Footer';
 import MovieWatch from '../MovieWatch';
 import AboutCard from './AboutCard';
@@ -17,6 +18,14 @@ const Container = styled.div`
 `;
 
 function WatchTrailer() {
+  const API_KEY = 'cd1b752287267fcdd91d7693d2fb5336';
+
+ 
+
+
+  const {vId , WatchTrailerData, setWatchTrailerData, handleSearch,base_url, popup, setPopup} = useContext(AuthContext);
+
+  console.log(WatchTrailerData,'this from watchTrailer')
   return (
     <>
     <div id='' style={{width:"86%",margin:"auto",color:"white", position:"relative"}}>
@@ -37,12 +46,12 @@ function WatchTrailer() {
         <h3 style={{ color: "white", paddingLeft: "4vh", marginBottom: "3vh" }}>
         Featured Videos
       </h3>
-        <RelatedVideoSlider/>
+        <RelatedVideoSlider api_url={`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_genres=10749`} base_url={base_url}/>
 
         <h3 style={{ color: "white", paddingLeft: "4vh", marginBottom: "3vh",marginTop:"3vh" }}>
         Related Videos
       </h3>
-        <RelatedVideoSlider/>
+        <RelatedVideoSlider  api_url={`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_genres=10749`} base_url={base_url}/>
     </div>
     </>
   )

@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect ,useState} from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { AuthContext } from "../../Context/AuthContext";
+import styled from 'styled-components';
 
-function FeaturesToday() {
+const Titles = styled.h6`
+  color : white;
+ position : relative;
+ top : 5px;
+ padding : 0;
+ margin : 0;
+
+ &:hover{
+   text-decoration :underline;
+   cursor: pointer;
+ }
+`;
+
+function FeaturesToday({threeSliderApiKey}) {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -23,31 +38,62 @@ function FeaturesToday() {
     },
   };
 
-  return (
-    <div style={{ color: "black", background:"black",width:"100%",margin:"auto", }}>
-     
 
+  
+  const API_KEY = 'cd1b752287267fcdd91d7693d2fb5336';
+
+  const [data,setData] = useState([]);
+  const {base_url,handleSearch} = useContext(AuthContext)
+
+  useEffect(()=>{
+    fetch(threeSliderApiKey)
+    .then((res)=>res.json())
+    .then((res)=>setData(res.results))
+  },[])
+
+
+
+
+  return (
+    <div style={{ color: "white", background:"black",width:"100%",margin:"auto", }}>
+    
   <Carousel responsive={responsive}>
-    <div style={{height : "300px", margin:"auto", width : "95%" }} > 
+
+    {
+      data.map((item)=>{
+        return (
+          <div onClick={()=>handleSearch(!item.title  ? item.name : item.title)} style={{height : "300px", margin:"auto", width : "95%" }} > 
+              <img src={`${base_url}${item.poster_path}`} alt="" height={"88%"} width={"100%"} /> 
+              <Titles >{!item.title  ? item.name : item.title}</Titles>
+          </div>
+        )
+      })
+    }
+
+    {/* <div style={{height : "300px", margin:"auto", width : "95%" }} > 
     <img src="https://m.media-amazon.com/images/M/MV5BNGZhMjBiMDMtYTIyMS00OTRlLThhZWItYThjNTRkZWEyNjIzXkEyXkFqcGdeQWpnYW1i._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg" alt="" height={"88%"} width={"100%"} /> 
     <h6 style={{ color : "white", position : "relative", top : "5px", padding : "0", margin : "0"}} >New Movie of 2022</h6>
     </div>
+
     <div style={{height : "300px", margin:"auto", width : "95%"}} >
     <img src="https://m.media-amazon.com/images/M/MV5BZDMxMDc3ZmItMWRjMi00YWU4LTg3ZGQtNGE1MDc2YzliZWU0XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_QL75_UX760_CR0,0,760,428_.jpg" alt="" height={"88%"} width={"100%"} /> 
     <h6 style={{ color : "white", position : "relative", top : "5px", padding : "0", margin : "0"}} >New Movie of 2022</h6>
     </div>
+
     <div style={{height : "300px", margin:"auto", width : "95%"}} >
     <img src="https://m.media-amazon.com/images/M/MV5BYzJjYzY5MDUtMDNmNi00NjY2LTljNzEtNTM5ZWNjNTUzMmNiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL75_UX760_CR0,0,760,428_.jpg" alt="" height={"88%"} width={"100%"} /> 
     <h6 style={{ color : "white", position : "relative", top : "5px", padding : "0", margin : "0"}} >New Movie of 2022</h6>
     </div>
+
     <div style={{height :"300px", margin:"auto", width : "95%" }} >
     <img src="https://m.media-amazon.com/images/M/MV5BNGZhMjBiMDMtYTIyMS00OTRlLThhZWItYThjNTRkZWEyNjIzXkEyXkFqcGdeQWpnYW1i._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg" alt="" height={"88%"} width={"100%"} /> 
     <h6 style={{ color : "white", position : "relative", top : "5px", padding : "0", margin : "0"}} >New Movie of 2022</h6>
     </div>
+
     <div style={{height :"300px", margin:"auto",width : "95%" }} >
     <img src="https://m.media-amazon.com/images/M/MV5BNGZhMjBiMDMtYTIyMS00OTRlLThhZWItYThjNTRkZWEyNjIzXkEyXkFqcGdeQWpnYW1i._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg" alt="" height={"88%"} width={"100%"} /> 
     <h6 style={{ color : "white", position : "relative", top : "5px", padding : "0", margin : "0",justifyContent : "center"}} >New Movie of 2022</h6>
-    </div>
+    </div> */}
    
   </Carousel>
     </div>
