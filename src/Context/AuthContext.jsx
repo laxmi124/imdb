@@ -12,7 +12,7 @@ export function AuthContextProvider({ children }) {
   const [vId, setVId] = useState("");
   const [progress, setProgress] = useState(0)
   const base_url = "https://image.tmdb.org/t/p/original/";
-
+  const [isChecked, setIsChecked] = useState(false)
 
     const [popup, setPopup] = useState(false)
    
@@ -56,7 +56,7 @@ export function AuthContextProvider({ children }) {
     
 
   return (
-    <AuthContext.Provider value={{setVId,vId,setProgress,progress,setWatchTrailerData,WatchTrailerData, login, isAuth , token ,logout, handleColor, color, handleSearch, popup, setPopup,base_url, setisEnglish, isEnglish}}>
+    <AuthContext.Provider value={{setVId,vId,setProgress,progress,setWatchTrailerData,WatchTrailerData, login, isAuth , token ,logout, handleColor, color, handleSearch, popup, setPopup,base_url, setisEnglish, isEnglish, setIsChecked,isChecked}}>
       {children}
     </AuthContext.Provider>
   );

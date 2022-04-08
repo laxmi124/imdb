@@ -6,7 +6,7 @@ import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import AppleIcon from "@mui/icons-material/Apple";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { AuthContext } from "../Context/AuthContext";
 import UserDropdown from "./UserDropdown";
@@ -66,7 +66,7 @@ const SignIn = () => {
           <AppleIcon sx={{ margin: "0 1rem" }}></AppleIcon> <div> Sign In With Apple </div>
         </Button>
         <h5>or</h5>
-        <a style={{textDecoration:"none"}} href="/registeri">
+        <Link style={{textDecoration:"none"}} to="/registeri">
           <button style={{
               // background: "#f2c75e",
              
@@ -83,7 +83,7 @@ const SignIn = () => {
           {" "}
          Create A New
           Account
-        </button></a>
+        </button></Link>
      
         <p style={{ maxWidth: "20vw", fontSize:"0.8rem" }}>
           By signing in, you agree to IMDb's Conditions of Use and Privacy

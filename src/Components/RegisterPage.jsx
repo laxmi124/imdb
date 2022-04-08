@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import Logo from "./Logo";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const RegisterPage = () => {
   let navigate = useNavigate()
   const [user, setUser] = useState({
@@ -157,9 +157,9 @@ const RegisterPage = () => {
           Already have an account?{" "}
           <span style={{ color: "#56aee2" }}>
             {" "}
-            <a href="/signi">
+            <Link to="/signi">
               Sign-In <ArrowRightIcon></ArrowRightIcon>{" "}
-            </a>{" "}
+            </Link>{" "}
           </span>{" "}
         </p>
       </div>

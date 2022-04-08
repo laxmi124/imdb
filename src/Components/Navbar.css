@@ -110,12 +110,13 @@
 .menui{
     display: none;
     color: white;
+    font-size: small;
 }
 
 @media screen and (max-width:720px) {
     .menui{
         display: flex;
-        font-size: x-large;
+        font-size:16px
         
     }
 }
