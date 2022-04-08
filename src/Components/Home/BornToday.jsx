@@ -81,7 +81,6 @@ function BornToday (){
                 // <MovieSliderCard key={item.id} name={item.name} poster ={item.poster_path} rate = {item.vote_average} /> 
                 <div className={classes.root} style={{textAlign: 'center'}}>
                 <Avatar alt="Remy Sharp" src={item.avatar} className={classes.large} />
-                <p>{item.first_name}</p>
               </div>
               )
               

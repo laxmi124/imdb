@@ -96,7 +96,7 @@ function Home() {
             {/* right side */}
 
             <DataAcordingToSliding>
-            <h5 style={{color:"#f5c516",paddingBottom:"3vh",fontWeight:"bold"}}>Up next</h5>
+            <h5 style={{color:"#f5c516",fontWeight:"bold" ,paddingBottom: "2vh"}}>Up next</h5>
               {/* in right side there are some small small boxes wich data changes acording to the slideshow */}
               <UpNextCardBoxes img_url='https://m.media-amazon.com/images/M/MV5BOWYzN2Q0NTYtODEzMi00YWMxLWE3MDMtZGUwNGM4NjMxMzQ4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_QL75_UX280_CR0,0,280,414_.jpg' title="Undone" time="2:59" discription='A woman discovers she has a new relationship with time, after surviving a car accident that almost killed her.'/>
               <UpNextCardBoxes img_url="https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_QL75_UX280_CR0,0,280,414_.jpg" title="Star Trek: Strange New Worlds" time="1:59" discription='A woman discovers she has a new relationship with time, after surviving a car accident that almost killed her.'/>
