@@ -1,3 +1,25 @@
 .navigationIcon:hover{
     color:#f5c516;
 }
+/* 
+style={{
+    width: "100%",
+    margin: "auto",
+    border: "1px solid black",
+    height: "250px",
+  }} */
+  .bannerTop{
+      width: 80%;
+      margin: auto;
+      border: 1px solid black;
+      height: 250px;
+  }
+  
+
+
+
+@media only screen and (max-width:720px) {
+        .bannerTop{
+            display: none;
+        }
+}

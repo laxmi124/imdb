@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 export const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
+  const [isEnglish, setisEnglish] = useState(true)
   const [isAuth, setIsAuth] = useState(false);
   const navigate = useNavigate();
   const [token, setToken] = useState("")
@@ -55,7 +56,7 @@ export function AuthContextProvider({ children }) {
     
 
   return (
-    <AuthContext.Provider value={{setVId,vId,setProgress,progress,setWatchTrailerData,WatchTrailerData, login, isAuth , token ,logout, handleColor, color, handleSearch, popup, setPopup,base_url}}>
+    <AuthContext.Provider value={{setVId,vId,setProgress,progress,setWatchTrailerData,WatchTrailerData, login, isAuth , token ,logout, handleColor, color, handleSearch, popup, setPopup,base_url, setisEnglish, isEnglish}}>
       {children}
     </AuthContext.Provider>
   );

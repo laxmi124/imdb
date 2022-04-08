@@ -22,12 +22,21 @@ const Container = styled.div`
   justify-content: center;
   border: 1px solid black;
   color: white;
+  @media (max-width: 720px) {
+   width:100%
+     }
 `;
 
 const WrapperOfFirstSlidingShow = styled.div`
   display: flex;
   // margin-top: 4px;
   background-color: black;
+
+  @media (max-width: 720px) {
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+    }
 `;
 
 const DataAcordingToSliding = styled.div`
@@ -35,6 +44,12 @@ const DataAcordingToSliding = styled.div`
   background-color: black;
   width: 35%;
   padding: 10px;
+  @media (max-width: 720px) {
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width: 80%;
+     }
 `;
 
 
@@ -65,21 +80,16 @@ function Home() {
       <Container>
         <div style={{background:"black"}}>
           <div
-            style={{
-              width: "970px",
-              margin: "auto",
-              border: "1px solid black",
-              height: "250px",
-            }}
+            className="bannerTop"
           >
             <img
               src="https://m.media-amazon.com/images/I/51rCt2U8jeL.jpg"
               alt=""
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "100%",  }}
             />
           </div>
 
-          <WrapperOfFirstSlidingShow>
+          <WrapperOfFirstSlidingShow className="topSliderandrightDiv">
             {/* left side */}
             <OwlCarousel />
 

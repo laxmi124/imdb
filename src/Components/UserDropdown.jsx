@@ -15,6 +15,7 @@ import { useDispatch } from 'react-redux';
 import { removeUser, Remove_User } from '../Redux/Kanhaiya/action';
 import { useNavigate } from 'react-router-dom';
 
+import "./Navbar.css"
 
 const UserDropdown = ({username}) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -29,7 +30,7 @@ const UserDropdown = ({username}) => {
     };
     return (
       <React.Fragment>
-        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', maxHeight:"20px", marginTop:"10px"}}>
          
           <Tooltip title="Account settings">
             <IconButton
@@ -59,7 +60,7 @@ const UserDropdown = ({username}) => {
               mt: 1.5,
               '& .MuiAvatar-root': {
                 width: 32,
-                height: 32,
+                height: 20,
                 ml: -0.5,
                 mr: 1,
               },

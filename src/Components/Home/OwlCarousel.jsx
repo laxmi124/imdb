@@ -8,7 +8,27 @@ const Wrapper = styled.div`
   margin: 20px;
   background: green;
   position: relative;
+  @media (max-width: 720px) {
+   
+    justify-content:center;
+    align-items:center;
+    width: 500px;
+
+     }
 `;
+const Slidercom = styled.div`
+width: "65%",
+height: "100%",
+margin: "20px",
+background: "#green",
+position: "relative",
+  @media (max-width: 720px) {
+    width:100%,
+    margin:0,
+  
+     }
+`;
+
 
 const TitleDiv = styled.div`
   width: 100%;
@@ -52,7 +72,7 @@ function OwlCarousel() {
   }, []);
 
   return (
-    <div
+    <Slidercom
       id="carouselExampleCaptions"
       className="carousel slide"
       data-bs-ride="carousel"
@@ -177,7 +197,7 @@ function OwlCarousel() {
         ></span>
         <span className="visually-hidden">Next</span>
       </button>
-    </div>
+    </Slidercom>
   );
 }
 
