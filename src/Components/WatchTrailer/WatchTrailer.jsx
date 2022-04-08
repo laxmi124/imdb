@@ -66,7 +66,7 @@ function WatchTrailer() {
         <h3 style={{ color: "white", paddingLeft: "4vh", marginBottom: "3vh",marginTop:"3vh" }}>
         Related Videos
       </h3>
-        <RelatedVideoSlider  api_url={`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_genres=10749`} base_url={base_url}/>
+        <RelatedVideoSlider  api_url={`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US`} base_url={base_url}/>
     </div>
     </>
   )

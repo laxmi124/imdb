@@ -6,7 +6,7 @@ import './UpNextCardBoxes.css'
 const Boxes = styled.div`
  width:98%;
  background-color:#101010;
- height:180px;
+ height:150px;
   margin:1vh;
   display: flex;
   align-items: center;

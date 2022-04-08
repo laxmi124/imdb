@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Wrapper = styled.div`
   width: 65%;
@@ -17,7 +18,6 @@ const TitleDiv = styled.div`
   flex-direction: row;
   //  position:absolute;
   bottom: 1vh;
-  border: 1px solid red;
 `;
 
 const TitlePicture = styled.img`
@@ -42,7 +42,9 @@ function OwlCarousel() {
 
   // /movie/top_rated?api_key=${API_KEY}&language=en-US
   // https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213
+  const {handleSearch} = useContext(AuthContext);
   const API_KEY = "cd1b752287267fcdd91d7693d2fb5336";
+
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_genres=35`
@@ -58,9 +60,8 @@ function OwlCarousel() {
       data-bs-ride="carousel"
       style={{
         width: "65%",
-        height: " 100%",
+        height: "100%",
         margin: "20px",
-        background: "#green",
         position: "relative",
       }}
     >
@@ -79,7 +80,7 @@ function OwlCarousel() {
   })
 } */}
 
-        <div className="carousel-item active">
+        <div className="carousel-item active"  onClick={()=>handleSearch("Tom Cruise Returns in Sequel")}>
           <img
             src="https://m.media-amazon.com/images/M/MV5BYWI1ZDQ4ZDItNjk0Ny00ZDcyLWI5MjctMmFkZjdkODI5ZGRlXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg"
             class="d-block w-100"
@@ -102,7 +103,7 @@ function OwlCarousel() {
         {/* Star Trek: Strange New Worlds */}
         {/* Watch Trailer */}
 
-        <div className="carousel-item">
+        <div className="carousel-item"  onClick={()=>handleSearch("Star Trek: Strange New Worlds")} >
           <img
             src="https://m.media-amazon.com/images/M/MV5BMDE0YTA2OTctOWIyMC00NjE5LTg5YjUtOThhYjhiY2Q5Njk1XkEyXkFqcGdeQXZ3ZXNsZXk@._CR647,146,1267,712_QL75_UY563_CR1,0,1000,563_.jpg"
             class="d-block w-100"
@@ -118,9 +119,26 @@ function OwlCarousel() {
             </div>
           </div>
         </div>
+
+        <div className="carousel-item"  onClick={()=>handleSearch("Ask Eachother Anything")} >
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BNzUxMTdmMTAtN2FiMC00NDQzLWFjNmEtNDgyYjBiYTY5N2QwXkEyXkFqcGdeQWZlZGVyaWdh._V1_QL75_UX1000_CR0,0,1000,563_.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div className="carousel-caption d-none d-md-block">
+            <div style={{ width: "100%", height: "90px" }}>
+              <div style={{ display: "flex" }}>
+                <PlayCircleOutlineIcon style={{ fontSize: "10vh" }} />
+                <h3>Ask Eachother Anything</h3>
+              </div>
+              <h6>Watch Trailer </h6>
+            </div>
+          </div>
+        </div>
         {/* Andrew Garfield stars in "under the banner of heaven" */}
         {/* Watch Trailer Now  */}
-        <div className="carousel-item">
+        <div className="carousel-item"  onClick={()=>handleSearch(`Andrew Garfield stars in "under the banner of heaven"`)}  >
           <img
             src="https://m.media-amazon.com/images/M/MV5BYWVhNTEyYTMtODg1OS00YTE2LWJlYTQtMDhiNWM4ZmQ4Yzg2XkEyXkFqcGdeQXZ3ZXNsZXk@._V1_QL40_QL75_UX1000_CR0,0,1000,563_.jpg"
             class="d-block w-100"
