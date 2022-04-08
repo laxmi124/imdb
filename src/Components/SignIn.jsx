@@ -9,6 +9,7 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { AuthContext } from "../Context/AuthContext";
+import UserDropdown from "./UserDropdown";
 const SignIn = () => {
     const {vId , setVId, setProgress} = useContext(AuthContext);
 
@@ -38,7 +39,7 @@ const SignIn = () => {
         <h5> <AdminPanelSettingsIcon></AdminPanelSettingsIcon> Sign In</h5>
         <Button style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)", display:"flex", justifyContent:"space-between"}} onClick={handleSign} variant="outlined">
           {" "}
-          <LocalMoviesIcon sx={{ margin: "0 0.5rem" }}></LocalMoviesIcon> <div>  Sign In
+          <LocalMoviesIcon sx={{ margin: "0 1rem" }}></LocalMoviesIcon> <div>  Sign In
           With IMDb  </div>
         </Button>
         <Button  style={{textTransform:"capitalize", fontWeight:"bolder", color:"rgba(88,88,88,255)", border:"1px solid rgba(88,88,88,255)", display:"flex", justifyContent:"space-between"}} variant="outlined">

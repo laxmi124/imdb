@@ -19,14 +19,14 @@ const RegisterPage = () => {
           name:userData.name,
           email:userData.email,
           password:userData.password,
-          username:userData.email,
+          username:userData.name,
          
           mobile: `${Math.floor(Math.random() * 11)}`,
           description: "NA",
     }
-    console.log(payload);
+    // console.log(payload);
    try {
-     
+     //ghar ka api
      let res1 = await fetch("https://masai-api-mocker.herokuapp.com/auth/register" , {
        method:"POST",
        body:JSON.stringify(payload),

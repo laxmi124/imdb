@@ -1,4 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import  { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { AuthContext } from '../../Context/AuthContext';
 import Footer from '../Footer/Footer';
@@ -18,12 +21,24 @@ const Container = styled.div`
 `;
 
 function WatchTrailer() {
+  
+  const isLogin = useSelector((state) => state.myReducer.isLogin);
+  let navigate = useNavigate()
+  const {vId , WatchTrailerData, setWatchTrailerData, handleSearch,base_url, popup, setPopup} = useContext(AuthContext);
+  useEffect(()=>{
+
+    if(!isLogin){
+      navigate("/signi")
+    }
+  }, [])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const API_KEY = 'cd1b752287267fcdd91d7693d2fb5336';
 
  
 
 
-  const {vId , WatchTrailerData, setWatchTrailerData, handleSearch,base_url, popup, setPopup} = useContext(AuthContext);
 
   console.log(WatchTrailerData,'this from watchTrailer')
   return (
