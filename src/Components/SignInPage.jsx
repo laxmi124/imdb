@@ -81,7 +81,7 @@ const SignInPage = () => {
             style={{ fontSize: "12px", fontWeight: "bold", marginTop:"12px" }}
             htmlFor="email"
           >
-            Email
+            Username
           </label>
           <input onChange={handleChange}  style={{ fontSize: "12px" }} type="email" name="username" />
 

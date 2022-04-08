@@ -1,3 +1,121 @@
 .eachpop:hover{
+   
     background-color: rgba(200, 185, 185, 0.444);
+}
+.navbar-bgd{
+     background: #121212 ;
+     /* max-height: max-; */
+     display: flex;
+     flex: 1;
+     justify-content: center;
+     align-items: center;
+     
+}
+.navbar-bgd > #navbar{
+    flex: 1;
+   /* border: 1px solid blue    ; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+}
+.navbar-bgd .navbar-full{
+    /* background-color: #121212 ; */
+    color: white;
+    display: flex;
+    
+  
+}
+
+
+#menucard > a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    /* align-items: top; */
+    flex: 1;
+    /* height: 2rem; */
+}
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-nav {
+    display: flex;
+    /* border: 1px solid blue; */
+    align-items: center;
+    justify-content: center;
+}
+/* style={{
+    outline: "none",
+    border: "none",
+    borderTopLeftRadius: "0.2rem",
+    borderBottomLeftRadius: "0.2rem",
+    textAlign: "center",
+    height: "4vh",
+  }} */
+
+.input-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+.search-popup{
+    display: grid;
+    grid-template-columns: "auto auto";
+    justify-content: space-between;
+    max-width: 70vw;
+    position: absolute;
+    top: 74px
+}
+.search-popup .eachpop{
+    position: relative;
+    max-height: 20rem ;
+    padding: 0.1rem;
+    text-align: center;
+    margin: 1rem;
+    overflow: hidden;
+   
+
+}
+.text-light{
+    background-color:#121212 ;
+    border: none;
+}
+.watchlist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eachpop img{
+    width: 80%;
+   
+}
+.white-color{
+    color: white;
+    display: none;
+}
+.menu-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.all-menu-links > div:hover{
+    border-bottom: 2px solid white;
+}
+.menui{
+    display: none;
+    color: white;
+}
+
+@media screen and (max-width:720px) {
+    .menui{
+        display: flex;
+        font-size: x-large;
+        
+    }
 }

@@ -84,7 +84,7 @@ const SignIn = () => {
          Create A New
           Account
         </button></a>
-
+     
         <p style={{ maxWidth: "20vw", fontSize:"0.8rem" }}>
           By signing in, you agree to IMDb's Conditions of Use and Privacy
           Policy

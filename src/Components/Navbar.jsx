@@ -6,11 +6,14 @@ import {
   Button,
   Dialog,
   IconButton,
+  MenuItem,
+  Select,
   Slide,
   toggleButtonClasses,
   Toolbar,
   Typography,
 } from "@mui/material";
+import "./Navbar.css";
 import CloseIcon from "@mui/icons-material/Close";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
@@ -27,42 +30,42 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const Navbar = () => {
-  
   const user = useSelector((state) => state.myReducer.user);
   const isLogin = useSelector((state) => state.myReducer.isLogin);
-  
+
   const [open, setOpen] = React.useState(false);
   const [text, setText] = useState("");
 
   const [arr, setArr] = useState([]);
-  const { vId, setVId, setProgress, handleSearch, popup, setPopup } =
-    useContext(AuthContext);
+  const {
+    vId,
+    setVId,
+    setProgress,
+    handleSearch,
+    popup,
+    setPopup,
+    setisEnglish,
+    isEnglish,
+  } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const naviagte = useNavigate();
   var id;
-  const [timer, setTimer]= useState(null)
-
-  
-  
+  const [timer, setTimer] = useState(null);
 
   const handleChange = (e) => {
-
     // clearTimeout(timer);
     setLoading(true);
     setPopup(true);
     let value = text;
-    
-   
-      
-      setText(e.target.value);
-      getData(value)
-    
+
+    setText(e.target.value);
+    getData(value);
   };
-  
 
   const getData = async (data) => {
     let res1 = await fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=cc5085fde0592cd1488b3e136fcc481d&query=${data}`
+      // `https://api.themoviedb.org/3/search/movie?api_key=[paste your key here]&query=${data}`
     );
     let res2 = await res1.json();
 
@@ -98,23 +101,13 @@ const Navbar = () => {
   }, [arr]);
 
   return (
-    <div style={{ background: "#121212" }}>
-      <div
-        id="navbar"
-        style={{
-          maxWidth: "90vw",
-          display: "flex",
-          justifyContent: "space-evenly",
-          margin: "auto",
-        }}
-      >
-        <nav
-          style={{ background: "#121212", color: "white" }}
-          className="navbar navbar-expand-lg"
-        >
+    <div className="navbar-bgd">
+      <i class="fi fi-rr-menu-burger menui"></i>
+      <div id="navbar">
+        <nav className="navbar navbar-expand-lg navbar-full">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
-              <Logo />
+              <Logo className="nav-logo" />
             </a>
             <button
               className="navbar-toggler"
@@ -134,14 +127,16 @@ const Navbar = () => {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li id="menucard" className="nav-item">
                   <a
-                    style={{ color: "white" }}
                     className="nav-link active"
                     aria-current="page"
                     href="#"
                     onClick={handleClickOpen}
                   >
-                    {" "}
-                    <MenuIcon></MenuIcon> Menu{" "}
+                 
+                      <MenuIcon></MenuIcon>
+                      <div><i className="fi fi-rr-menu-burger white-color"></i></div>
+               
+                    <div>{isEnglish ? <p>Menu</p> : <p> मेनू </p>}</div>   
                   </a>
                   <Dialog
                     fullScreen
@@ -330,49 +325,36 @@ const Navbar = () => {
                     </div>
                   </Dialog>
                 </li>
-                <li className="nav-item font-weight-bold">
-                  {/* <a className="nav-link" href="#">Link</a> */}
-                </li>
-                <li style={{ marginTop: "0.5rem" }}>
-                  <select
-                    style={{
+
+                <li className="input-navbar">
+                  <Select
+                    sx={{
+                      color: "black",
+                      background: "white ",
+                      maxHeight: "28px",
                       outline: "none",
+                      borderRadius: "none",
                       border: "none",
-                      borderTopLeftRadius: "0.2rem",
-                      borderBottomLeftRadius: "0.2rem",
-                      textAlign: "center",
-                      height: "4vh",
                     }}
-                    name=""
                     id="selectOption"
+                    displayEmpty
+                    inputProps={{ "aria-label": "Without label" }}
                   >
-                    <option className="bg-dark text-light" value="all">
-                      {" "}
-                      All
-                    </option>
-                    <option className="bg-dark text-light" value="all">
-                      Titles
-                    </option>
-                    <option className="bg-dark text-light" value="all">
-                      TV Episodes
-                    </option>
-                    <option className="bg-dark text-light" value="all">
-                      Celebs
-                    </option>
-                    <option className="bg-dark text-light" value="all">
-                      Companies
-                    </option>
-                    <option className="bg-dark text-light" value="all">
-                      Keywords
-                    </option>
-                  </select>
+                    <MenuItem value=""></MenuItem>
+                    <MenuItem value={10}> All</MenuItem>
+                    <MenuItem value={20}> Titles</MenuItem>
+                    <MenuItem value={30}> TV Episodes</MenuItem>
+                    <MenuItem value={30}> Celebs</MenuItem>
+                    <MenuItem value={30}> Companies</MenuItem>
+                    <MenuItem value={30}> Keywords</MenuItem>
+                  </Select>
                   <input
                     autoComplete="off"
                     onChange={handleChange}
                     value={text}
                     id="search-input"
                     type="text"
-                    placeholder="Search"
+                    placeholder={isEnglish ? "Search IMDb" : "सर्च IMDb"}
                     style={{
                       outline: "none",
                       border: "none",
@@ -386,38 +368,39 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link active">IMDbPro</a>
+                  <a className="nav-link active">
+                    {isEnglish ? "IMDbPro" : "IMDb प्रो"}
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active">
+                  <a className="nav-link active watchlist">
                     {" "}
-                    <WatchLaterIcon></WatchLaterIcon> Watchlist
+                    <WatchLaterIcon></WatchLaterIcon>{" "}
+                    {isEnglish ? "Watchiist" : "वाच लिस्ट"}
                   </a>
                 </li>
                 <li className="nav-item">
                   {/* <a className="nav-link active">Sign In</a>  */}
                   {isLogin ? (
-                    <UserDropdown username={user.username}/>
+                    <UserDropdown username={user.username} ></UserDropdown>
                   ) : (
-                    <a  onClick={handlelog} className="nav-link active">Sign In</a>
+                    <a onClick={handlelog} className="nav-link active">
+                      {isEnglish ? "  Sign In" : "साइन इन" }
+                    </a>
                   )}
                 </li>
-                <li
-                  style={{
-                    marginTop: "0.5rem",
-                    outline: "none",
-                    border: "none",
-                  }}
-                >
+                <li>
                   <select
-                    style={{
-                      outline: "none",
-                      border: "none",
-                      background: "rgb(31,31,31)",
-                    }}
+                    // style={{
+                    //   outline: "none",
+                    //   border: "none",
+                    //   background: "rgb(31,31,31)",
+                    //   fontSize: "20px",
+                    // }}
                     className="text-light"
                     name=""
                     id=""
+                    onChange={() => setisEnglish(!isEnglish)}
                   >
                     <option value="en">EN</option>
                     <option value="hi">HI</option>
@@ -429,15 +412,7 @@ const Navbar = () => {
         </nav>
       </div>
       {popup && (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "auto auto",
-            justifyContent: "space-between",
-            maxWidth: "70vw",
-          }}
-          className="search-popup"
-        >
+        <div className="search-popup">
           {loading ? (
             <>
               <Skeleton variant="text" />
@@ -450,21 +425,9 @@ const Navbar = () => {
                 onClick={() => handleSearch(movie.title)}
                 key={index}
                 className="eachpop"
-                style={{
-                  position: "relative",
-                  maxHeight: "200px",
-                  padding: "0.5rem",
-                  textAlign: "left",
-                  margin: "20px",
-                  overflow: "hidden",
-                }}
               >
                 <h5>{movie.title}</h5>
-                <img
-                  style={{ width: "100%" }}
-                  src={movie.poster_path}
-                  alt="movie"
-                />
+                <img src={movie.poster_path} alt="movie" />
                 <PlayCircleOutlineIcon
                   className="playbtn"
                   sx={{
