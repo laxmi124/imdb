@@ -101,7 +101,7 @@ const UserDropdown = ({username}) => {
             </ListItemIcon>
             Settings
           </MenuItem>
-          <MenuItem onClick={()=>{dispatch(removeUser(false));  navigate("/signi")}}>
+          <MenuItem onClick={()=>{dispatch(removeUser(false)); localStorage.clear();  navigate("/signi")}}>
             <ListItemIcon>
               <Logout sx={{color:"white"}} fontSize="small" />
             </ListItemIcon  >

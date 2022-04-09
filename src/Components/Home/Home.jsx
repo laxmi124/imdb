@@ -93,7 +93,7 @@ function Home() {
       <Container>
         <div style={{background:"black"}}>
           <div
-          onClick={()=>{handleSearch("amazonprime")}}
+          // onClick={()=>{handleSearch("amazonprime")}}
             className="bannerTop"
           >
             <img

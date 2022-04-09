@@ -86,7 +86,8 @@ function RelatedVideoSlider({api_url}) {
             return (
               <div 
                key={item.id}
-               onClick={()=>handleSearch(item.title?item.title : item.name)}
+               onClick={()=>handleSearch(item.title )}
+              //  onClick={()=>console.log(item.title)}
               style={{
                 height: "500px",
                 margin: "auto",
