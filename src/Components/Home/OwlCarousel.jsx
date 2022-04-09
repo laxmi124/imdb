@@ -18,14 +18,14 @@ const Wrapper = styled.div`
      }
 `;
 const Slidercom = styled.div`
-width: "65%",
-height: "100%",
-margin: "20px",
-background: "#green",
-position: "relative",
+width: "65%";
+height: "100%";
+margin: "20px";
+background: "#green";
+position: "relative";
   @media (max-width: 720px) {
-    width:100%,
-    margin:0,
+    width:100%;
+    margin:0;
   
      }
 `;
@@ -42,7 +42,11 @@ const H6 = styled.h6`
      }
 `;
 const Div1 = styled.div`
-     display:flex
+     display:flex;
+     border:1px;
+     flex-direction:column;
+     justify-content:center; 
+     align-items:center; 
   @media (max-width: 720px) {
     display:none
      }
@@ -149,7 +153,7 @@ function OwlCarousel() {
           />
           <div className="carousel-caption d-none d-md-block">
             <div style={{ width: "100%", height: "90px" }}>
-              <Div1 style={{ display: "flex" }}>
+              <Div1>
                 <PlayCircleOutlineIcon style={{ fontSize: "10vh" }} />
                 <H3>Star Trek: Strange New Worlds</H3>
               </Div1>
@@ -166,7 +170,7 @@ function OwlCarousel() {
           />
           <div className="carousel-caption d-none d-md-block">
             <div style={{ width: "100%", height: "90px" }}>
-              <Div1 style={{ display: "flex" }}>
+              <Div1 >
                 <PlayCircleOutlineIcon style={{ fontSize: "10vh" }} />
                 <H3>Ask Eachother Anything</H3>
               </Div1>
@@ -183,13 +187,13 @@ function OwlCarousel() {
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
-            <div style={{ width: "100%", height: "90px" }}>
-              <Div1 style={{ display: "flex" }}>
+            <Div1 style={{ width: "100%", height: "90px" }}>
+              <Div1>
                 <PlayCircleOutlineIcon style={{ fontSize: "10vh" }} />
                 <H3> Andrew Garfield stars in "under the banner of heaven"</H3>
               </Div1>
               <H6>Watch Trailer Now </H6>
-            </div>
+            </Div1>
           </div>
         </div>
       </div>

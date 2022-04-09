@@ -21,7 +21,7 @@ const Container = styled.div`
 `;
 
 function WatchTrailer() {
-  
+  const [inc, setInc] = useState(0)
   const isLogin = useSelector((state) => state.myReducer.isLogin);
   let navigate = useNavigate()
   const {vId , WatchTrailerData, setWatchTrailerData, handleSearch,base_url, popup, setPopup} = useContext(AuthContext);
@@ -30,14 +30,18 @@ function WatchTrailer() {
     if(!isLogin){
       navigate("/signi")
     }
-  }, [])
-  useEffect(() => {
+    console.log("inside");
     window.scrollTo(0, 0)
-  }, [])
+  }, [inc])
+ 
   const API_KEY = 'cd1b752287267fcdd91d7693d2fb5336';
 
+  const handleinc = ()=>{
+    setInc((prev)=>prev);
+    // handleSearch(()=>)
+  }
 
-  console.log(WatchTrailerData,'this from watchTrailer')
+  // console.log(WatchTrailerData,'this from watchTrailer')
   return (
     <>
     <div id='' style={{width:"86%",margin:"auto",color:"white", position:"relative"}}>
