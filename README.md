@@ -1,3 +1,7 @@
+
+IMDB Video is a movie rating website where users can rate the movies and watch it.
+
+A Collaborative project built by a team of 3 executed in 6 days.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
