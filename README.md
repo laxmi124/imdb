@@ -1,7 +1,10 @@
 
-IMDB Video is a movie rating website where users can rate the movies and watch it.
+IMDB Video is a movie rating website where users can rate the movies and watch them.
 
 A Collaborative project built by a team of 3 executed in 6 days.
+![ImdbSS](https://github.com/laxmi124/imdb/assets/100482038/b8be6e7f-71aa-42f8-8403-1715ca60b51a)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
